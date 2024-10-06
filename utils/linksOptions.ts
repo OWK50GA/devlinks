@@ -5,72 +5,72 @@ import { TbBrandGithub, TbBrandGithubFilled } from "react-icons/tb";
 export const platformConfig = {
     github: {
         name: 'Github',
-        color: '',
-        icon: TbBrandGithubFilled
+        color: '#191919',
+        icon: TbBrandGithubFilled,
     },
     frontendMentor: {
         name: 'Frontend Mentor',
-        color: '',
+        color: '#ffffff',
         icon: SiFrontendmentor,
     },
     twitter: {
         name: 'Twitter',
-        color: '',
+        color: '#43b7e9',
         icon: FaTwitter,
     },
     linkedIn: {
         name: 'LinkedIn',
-        color: '',
+        color: '#2d68ff',
         icon: FaLinkedin,
     },
     youtube: {
         name: 'YouTube',
-        color: '',
+        color: '#ee3939',
         icon: FaYoutube,
     },
     facebook: {
         name: 'Facebook',
-        color: '',
+        color: '#2442ac',
         icon: FaFacebook,
     },
     twitch: {
         name: 'Twitch',
-        color: '',
+        color: '#ee3fc8',
         icon: FaTwitch,
     },
     dev_to: {
         name: 'Dev.to',
-        color: '',
+        color: '#333333',
         icon: FaDev,
     },
     codewars: {
         name: 'CodeWars',
-        color: '',
+        color: '#8a1a50',
         icon: SiCodewars,
     },
     codepen: {
         name: 'Codepen',
-        color: '',
+        color: '#32cd32',
         icon: FaCodepen,
     },
     freeCodeCamp: {
         name: 'freeCodeCamp',
-        color: '',
+        color: '#302267',
         icon: FaFreeCodeCamp,
     },
     gitLab: {
         name: 'GitLab',
-        color: '',
+        color: '#eb4925',
         icon: FaGitlab,
     },
     hashnode: {
         name: 'Hashnode',
-        color: '',
+        color: '#0330d1',
         icon: FaHashnode,
     },
     stackOverflow: {
         name: 'Stack Overflow',
-        color: '',
+        color: '#ec7100',
         icon: FaStackOverflow,
     },
 }

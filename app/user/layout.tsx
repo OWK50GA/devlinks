@@ -9,10 +9,10 @@ const UserLayout = ({children}: {
             <UserNav />
 
             <div className="mt-10 flex gap-16">
-                <div className="hidden sm:block w-[38%]">
+                <div className="hidden lg:block w-[38%] flex-shrink-0">
                     <MockUp />
                 </div>
-                <div className="w-[57%] h-screen">
+                <div className="flex-grow w-full">
                     {children}
                 </div>
             </div>
