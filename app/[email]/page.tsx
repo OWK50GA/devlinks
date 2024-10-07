@@ -70,6 +70,8 @@ const PreviewPage = async ({params}: PreviewPageProps) => {
 
     if (querySnapshot.empty) {
         return <p>User Not found</p>
+    } else if (querySnapshot.size > 1) {
+        return <p>Email used for more than one account</p>
     }
 
     const userData = querySnapshot?.docs?.[0]?.data();

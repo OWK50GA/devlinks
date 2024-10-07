@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
 import {auth, db} from '../firebase'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, User } from 'firebase/auth'
-import { doc, getDoc, setDoc } from "firebase/firestore"
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore"
 
 type AuthContextType = {
     currentUser: User | null;
@@ -58,12 +58,17 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
                     return
                 }
 
+                const userEmail = user.email
+
                 const docRef = doc(db, 'users', user.uid)
                 const docSnap = await getDoc(docRef)
                 if (!docSnap.exists()) {
                     await setDoc(docRef, userDataObj)
                   } else {
                     setUserDataObj(docSnap.data());
+                    await updateDoc(docRef, {
+                        email: userEmail
+                    })
                   }                                                                                          
             } catch (err) {
                 console.error('No user found ',err)                                                                                                                                                    
