@@ -48,7 +48,7 @@ const UserPage = () => {
     const { register, formState: {errors}, control, handleSubmit } = useForm<LinkFormValues>({
         defaultValues: {
             // Repopulate forms with existing data
-            links: currentLinks.map((currentLink: Link) => ({
+            links: currentLinks?.map((currentLink: Link) => ({
                 platform: currentLink.platform,
                 link: currentLink.link
             })) || []
