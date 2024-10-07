@@ -76,11 +76,6 @@ const PreviewPage = async ({params}: PreviewPageProps) => {
 
     return ( 
         <div>
-            {/* <head>
-                <meta property="og:image" content={userData?.profilePicture}/>
-                <meta property="og:image:width" content="1200"/>
-                <meta property="og:image:height" content="630"/>
-            </head> */}
             <div className="bg-transparent sm:bg-[#633cff] rounded-b-xl w-full h-fit md:h-72 p-4">
                 <nav className="flex p-4 bg-white rounded-md justify-between">
                     <div>
@@ -114,7 +109,7 @@ const PreviewPage = async ({params}: PreviewPageProps) => {
 
                 {
                     userData?.links? 
-                    <div className="flex flex-col gap-4 mt-5 max-h-[45vh] md:max-h-[40vh] overflow-y-scroll">
+                    <div className="flex flex-col gap-4 mt-5 max-h-[45vh] md:max-h-[35vh] overflow-y-scroll">
                         {
                             userData?.links?.map((link: Link) => {
                                 const platformConfigArray = Object.values(platformConfig)
