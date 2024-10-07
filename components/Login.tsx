@@ -95,7 +95,7 @@ const Login = () => {
                         </div>
 
                         <div>
-                            <Button text={!loading? 'Login' : 'Logging in...'} disabled={!isValid || loading} full dark mobileFull/>
+                            <Button text={!loading? 'Login' : 'Logging in...'} disabled={loading} full dark mobileFull/>
                         </div>
 
                     </div>

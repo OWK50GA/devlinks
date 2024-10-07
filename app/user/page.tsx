@@ -115,7 +115,7 @@ const UserPage = () => {
                 <p className={`font-bold sm:text-3xl text-2xl`}>Customize your links</p>
                 <p className="text-sm text-gray-600">Add/edit/remove links below and then share all your profiles with the world!</p>
                 <div className="mt-5 font-bold">
-                    <Button text="+ Add new link" full dark={false} clickHandler={handleAddLink}/>
+                    <Button text="+ Add new link" full dark={false} clickHandler={handleAddLink} mobileFull/>
                 </div>
             </div>
             

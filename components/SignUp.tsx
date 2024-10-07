@@ -62,7 +62,7 @@ const SignUp = () => {
     return ( 
         <div className={'flex flex-col justify-center items-center mt-[5%] w-full m-auto gap-9' + ' ' + instrumentSans.className}>
             <Logo />
-            <div className='bg-white w-fit md:w-[500px] p-10 rounded-xl'>
+            <div className='bg-white w-fit md:w-[500px] p-6 md:p-10 rounded-xl'>
                 <div className='flex flex-col gap-4'>
                     <p className='text-2xl font-[1000]'>Create Account</p>
                     <p className='text-gray-600'>Let's get you started sharing your links</p>
@@ -133,7 +133,7 @@ const SignUp = () => {
                         </div>
 
                         <div>
-                            <Button text={!loading? 'Create new account' : 'Creating new account'} disabled={!isValid || loading} full dark mobileFull/>
+                            <Button text={!loading? 'Create new account' : 'Creating new account'} disabled={loading} full dark mobileFull/>
                         </div>
 
                     </div>
