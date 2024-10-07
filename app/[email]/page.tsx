@@ -18,7 +18,7 @@ type Link = {
     link: string
 }
 
-export async function generateMetaData (
+export async function generateMetadata (
     { params }: PreviewPageProps,
     parent: ResolvingMetadata
 ): Promise<Metadata> {
