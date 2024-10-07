@@ -11,7 +11,7 @@ type ShareButtonProps = {
 
 const ShareButton = ({userData, uniqueValue}: ShareButtonProps) => {
 
-    const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${encodeURIComponent(uniqueValue)}`;
+    const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${uniqueValue}`;
 
     const handleShare = async () => {
         if (navigator.share) {
