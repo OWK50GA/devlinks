@@ -11,12 +11,14 @@ type ShareButtonProps = {
 
 const ShareButton = ({userData, uniqueValue}: ShareButtonProps) => {
 
+    const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${encodeURIComponent(uniqueValue)}`;
+
     const handleShare = async () => {
         if (navigator.share) {
             await navigator.share({
                 title: `${userData?.firstname} ${userData?.lastname} - Devlinks`,
                 text: `Meet ${userData?.firstname} on Devlinks`,
-                url: `${uniqueValue}`
+                url: `${shareUrl}`
             })
             .catch((err) => {
                 console.error(`An error occured: ${err}`)

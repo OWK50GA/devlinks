@@ -4,6 +4,8 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { platformConfig } from "@/utils/linksOptions";
 import EditorButton from "@/components/EditorButton";
 import ShareButton from "@/components/ShareButton";
+import { Metadata, ResolvingMetadata } from "next";
+import { use } from "react";
 
 type PreviewPageProps = {
     params: {
@@ -14,6 +16,48 @@ type PreviewPageProps = {
 type Link = {
     platform: string,
     link: string
+}
+
+export async function generateMetaData (
+    { params }: PreviewPageProps,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const { email } = params
+    const uniqueValue = decodeURIComponent(email)
+
+    const q = query(collection(db, 'users'), where('email', '==', uniqueValue));
+    const querySnapshot = await getDocs(q)
+
+    if (querySnapshot.empty) {
+        return {
+            title: 'User Not Found'
+        }
+    }
+
+    const userData = querySnapshot?.docs?.[0]?.data();
+
+    return {
+        title: `${userData?.firstname} ${userData?.lastname} - Devlinks`,
+        description: `Meet ${userData?.firstname} on Devlinks`,
+        openGraph: {
+            title: `${userData?.firstname} ${userData?.lastname} - Devlinks`,
+            description: `Meet ${userData?.firstname} on Devlinks`,
+            images: [
+                {
+                    url: userData?.profilePicture || null,
+                    width: 1200,
+                    height: 630,
+                    alt: `Profile of ${userData?.firstname} ${userData?.lastname}`
+                }
+            ]   
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${userData?.firstname} ${userData?.lastname} - Devlinks`,
+            description: `Meet ${userData?.firstname} on Devlinks`,
+            images: [userData?.profilePicture || null]
+        },
+    }
 }
 
 const PreviewPage = async ({params}: PreviewPageProps) => {
@@ -32,11 +76,11 @@ const PreviewPage = async ({params}: PreviewPageProps) => {
 
     return ( 
         <div>
-            <head>
+            {/* <head>
                 <meta property="og:image" content={userData?.profilePicture}/>
                 <meta property="og:image:width" content="1200"/>
                 <meta property="og:image:height" content="630"/>
-            </head>
+            </head> */}
             <div className="bg-transparent sm:bg-[#633cff] rounded-b-xl w-full h-fit md:h-72 p-4">
                 <nav className="flex p-4 bg-white rounded-md justify-between">
                     <div>
