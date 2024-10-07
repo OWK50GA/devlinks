@@ -70,7 +70,7 @@ const PreviewPage = async ({params}: PreviewPageProps) => {
 
                 {
                     userData?.links? 
-                    <div className="flex flex-col gap-4 mt-5 max-h-[45vh] md:max-h-[45vh] overflow-y-scroll">
+                    <div className="flex flex-col gap-4 mt-5 max-h-[45vh] md:max-h-[40vh] overflow-y-scroll">
                         {
                             userData?.links?.map((link: Link) => {
                                 const platformConfigArray = Object.values(platformConfig)
