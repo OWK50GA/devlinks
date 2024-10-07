@@ -79,7 +79,7 @@ const SignUp = () => {
                                     placeholder='e.g. alex@email.com'
                                     {...register("email")}
                                 />
-                                <div className='text-sm text-[#FF3939] font-light'>
+                                <div className='text-xs md:text-sm text-[#FF3939] font-light'>
                                     {errors.email? errors.email.message : ''}
                                 </div>
                             </span>
@@ -95,18 +95,18 @@ const SignUp = () => {
                                     placeholder='At least 8 characters'
                                     {...register("password")}
                                 />
-                                <div className='text-sm text-[#FF3939] font-light'>
+                                <div className='text-xs md:text-sm text-[#FF3939] font-light'>
                                     {errors.password?.type === 'min' ? errors.password.message : ''}
                                 </div>
                             </span>
                         </div>
 
-                        {
+                        {/* {
                             errors.password?.type === 'pattern'? 
                             <div>{errors.password?.message}</div>
                             : 
                             null
-                        }
+                        } */}
 
                         <div className='flex flex-col gap-[5px]'>
                             <label htmlFor="password" className='text-xs'>Confirm password</label>
@@ -118,7 +118,7 @@ const SignUp = () => {
                                     placeholder='At least 8 characters'
                                     {...register("confirmPassword")}
                                 />
-                                <div className='text-sm text-[#FF3939] font-light'>
+                                <div className='text-xs md:text-sm text-[#FF3939] font-light'>
                                     {errors.confirmPassword?.type === 'min' ? errors.confirmPassword.message : ''}
                                 </div>
                             </span>
@@ -128,12 +128,12 @@ const SignUp = () => {
                             <p>Password must contain at least 8 characters</p>
                         </div>
 
-                        <div className='text-sm text-[#FF3939] font-light'>
+                        <div className='text-xs md:text-sm text-[#FF3939] font-light'>
                             {errors.confirmPassword?.type === 'custom'? errors.confirmPassword.message : ''}
                         </div>
 
                         <div>
-                            {errors.password?.type === 'pattern' ? errors.password.message : ''}
+                            {errors.password?.type !== 'min' ? errors.password?.message : ''}
                         </div>
 
                         <div>
@@ -147,7 +147,7 @@ const SignUp = () => {
                     <p>Already have an account? <span className='text-[#633cff]'><Link href={'login'}>Login</Link></span></p>
                 </div>
             </div>
-            {error && <div className='text-sm text-[#FF3939] font-light'>{error}</div>}
+            {error && <div className='text-xs md:text-sm text-[#FF3939] font-light'>{error}</div>}
         </div>
      );
 }
