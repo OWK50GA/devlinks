@@ -124,12 +124,16 @@ const ProfileForm = () => {
                 profilePicture: imageUrl
             }))
 
+            setLoading(false)
+
         } catch (err) {
             console.error('Error updating/creating profile: ', err)
             setError(`Error submitting form: ${err}`)
+            setLoading(false)
         } finally {
             setLoading(false)
         }
+        setLoading(false)
     }
 
     return ( 
