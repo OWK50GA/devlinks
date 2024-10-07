@@ -103,7 +103,7 @@ const Login = () => {
 
                 <div className='mx-auto mt-4 text-sm text-gray-600 w-3/6 md:w-fit text-center'>
                 <p>
-                    Don't have an account? 
+                    Don't have an account? <br className='md:hidden'/>
                     <span className='text-[#633cff]'>
                         <Link href={'signup'}>
                             Create Account
