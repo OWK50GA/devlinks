@@ -54,7 +54,7 @@ const SignUp = () => {
             router.push('/login')
             setLoading(false)
         }).catch((err) => {
-            setError(`Error occured Signing Up: ${err}`)
+            setError(`Error occured Signing Up: ${err.message}`)
             setLoading(false)
         })
     }

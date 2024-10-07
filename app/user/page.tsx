@@ -112,7 +112,7 @@ const UserPage = () => {
     return ( 
         <div className={"bg-white h-fit md:h-screen rounded-xl p-8"}>
             <div className={`flex flex-col gap-3 ${instrumentSans.className}`}>
-                <p className={`font-extrabold sm:text-3xl text-2xl`}>Customize your links</p>
+                <p className={`font-bold sm:text-3xl text-2xl`}>Customize your links</p>
                 <p className="text-sm text-gray-600">Add/edit/remove links below and then share all your profiles with the world!</p>
                 <div className="mt-5 font-bold">
                     <Button text="+ Add new link" full dark={false} clickHandler={handleAddLink}/>
@@ -125,7 +125,7 @@ const UserPage = () => {
                             fields.length === 0 ?
                             <div className="flex flex-col justify-center items-center">
                                 <Image src={getStartedImg} alt="Get Started"/>
-                                <p className={"mt-8 text-2xl font-extrabold"}>Let's get you started</p>
+                                <p className={"mt-8 text-2xl font-bold"}>Let's get you started</p>
                                 <p className="w-3/5 mt-5 mx-auto text-sm text-gray-500 text-center">
                                     Use the "Add new link" button to get started. Once you have more than one link, you can reorder and edit them.
                                     We're here to help you share your profiles with everyone!

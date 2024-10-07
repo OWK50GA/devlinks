@@ -46,8 +46,8 @@ const Login = () => {
             setLoading(false)
             router.push('/user/profile')
         }).catch((err) => {
-            console.error('Error occured Logging in: ', err)
-            setError(`Error occured Logging in: , ${err}`)
+            console.error('Error occured Logging in: ', err.message)
+            setError(`Error occured Logging in: , ${err.message}`)
             setLoading(false)
         })
     }
