@@ -96,7 +96,7 @@ const SignUp = () => {
                                     {...register("password")}
                                 />
                                 <div className='text-xs md:text-sm text-[#FF3939] font-light'>
-                                    {errors.password?.type === 'min' ? errors.password.message : ''}
+                                    {errors.password ? (errors.password.type === 'min' ? errors.password.message : '') : ''}
                                 </div>
                             </span>
                         </div>
@@ -132,7 +132,7 @@ const SignUp = () => {
                             {errors.confirmPassword?.type === 'custom'? errors.confirmPassword.message : ''}
                         </div>
 
-                        <div>
+                        <div className='text-xs md:text-sm text-[#FF3939] font-light'>
                             {errors.password?.type !== 'min' ? errors.password?.message : ''}
                         </div>
 

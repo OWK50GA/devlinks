@@ -85,7 +85,6 @@ const ProfileForm = () => {
     }
 
     const onSubmit = async (values: ProfileFormSchema) => {
-        reset()
         setLoading(true)
         const userId = currentUser?.uid
         const userDocRef = doc(db, 'users', userId)
