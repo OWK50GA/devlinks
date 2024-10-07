@@ -101,15 +101,15 @@ const Login = () => {
                     </div>
                 </form>
 
-                <div className='mx-auto mt-4 text-sm text-gray-600 w-3/6 md:w-fit text-center'>
-                <p>
-                    Don't have an account? <br className='md:hidden'/>
-                    <span className='text-[#633cff]'>
-                        <Link href={'signup'}>
-                            Create Account
-                        </Link>
-                    </span>
-                </p>
+                <div className='mx-auto mt-4 text-sm text-gray-600 w-4/6 md:w-fit text-center'>
+                    <p>
+                        Don't have an account? <br className='md:hidden'/>
+                        <span className='text-[#633cff]'>
+                            <Link href={'signup'}>
+                                Create Account
+                            </Link>
+                        </span>
+                    </p>
                 </div>
             </div>
             {error && <div className='text-sm text-[#FF3939] font-light'>{error}</div>}

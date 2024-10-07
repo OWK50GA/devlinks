@@ -133,6 +133,10 @@ const SignUp = () => {
                         </div>
 
                         <div>
+                            {errors.password?.type === 'pattern' ? errors.password.message : ''}
+                        </div>
+
+                        <div>
                             <Button text={!loading? 'Create new account' : 'Creating new account'} disabled={loading} full dark mobileFull/>
                         </div>
 
