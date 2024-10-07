@@ -16,7 +16,7 @@ const ShareButton = ({userData, uniqueValue}: ShareButtonProps) => {
             await navigator.share({
                 title: `${userData?.firstname} ${userData?.lastname} - Devlinks`,
                 text: `Meet ${userData?.firstname} on Devlinks`,
-                url: `/${uniqueValue}`
+                url: `${uniqueValue}`
             })
             .catch((err) => {
                 console.error(`An error occured: ${err}`)

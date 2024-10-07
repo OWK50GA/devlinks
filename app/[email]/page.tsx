@@ -32,6 +32,11 @@ const PreviewPage = async ({params}: PreviewPageProps) => {
 
     return ( 
         <div>
+            <head>
+                <meta property="og:image" content={userData?.profilePicture}/>
+                <meta property="og:image:width" content="1200"/>
+                <meta property="og:image:height" content="630"/>
+            </head>
             <div className="bg-transparent sm:bg-[#633cff] rounded-b-xl w-full h-fit md:h-72 p-4">
                 <nav className="flex p-4 bg-white rounded-md justify-between">
                     <div>
