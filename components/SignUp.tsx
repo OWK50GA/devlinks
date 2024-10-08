@@ -125,11 +125,11 @@ const SignUp = () => {
                                     {...register("confirmPassword")}
                                 />
                                 <div className='hidden md:flex text-xs md:text-sm text-[#FF3939] font-light'>
-                                    {errors.confirmPassword?.type === 'min' ? errors.confirmPassword.message : ''}
+                                    {errors.confirmPassword ? errors.confirmPassword.message : ''}
                                 </div>
                             </span>
                             <div className='flex md:hidden text-xs md:text-sm text-[#FF3939] font-light'>
-                                {errors.confirmPassword?.type === 'min' ? errors.confirmPassword.message : ''}
+                                {errors.confirmPassword? errors.confirmPassword.message : ''}
                             </div>
                         </div>
 
