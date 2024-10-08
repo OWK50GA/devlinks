@@ -137,9 +137,9 @@ const SignUp = () => {
                             <p>Password must contain at least 8 characters</p>
                         </div>
 
-                        <div className='text-xs md:text-sm text-[#FF3939] font-light'>
+                        {/* <div className='hidden md:flex text-xs md:text-sm text-[#FF3939] font-light'>
                             {errors.confirmPassword?.type === 'custom'? errors.confirmPassword.message : ''}
-                        </div>
+                        </div> */}
 
                         <div className='hidden md:flex text-xs md:text-sm text-[#FF3939] font-light'>
                             {errors.password?.type !== 'min' ? errors.password?.message : ''}
