@@ -79,10 +79,13 @@ const SignUp = () => {
                                     placeholder='e.g. alex@email.com'
                                     {...register("email")}
                                 />
-                                <div className='text-xs md:text-sm text-[#FF3939] font-light'>
+                                <div className='hidden md:flex text-xs md:text-sm text-[#FF3939] font-light'>
                                     {errors.email? errors.email.message : ''}
                                 </div>
                             </span>
+                            <div className='flex md:hidden text-xs md:text-sm text-[#FF3939] font-light'>
+                                {errors.email? errors.email.message : ''}
+                            </div>
                         </div>
 
                         <div className='flex flex-col gap-[5px]'>
@@ -95,10 +98,13 @@ const SignUp = () => {
                                     placeholder='At least 8 characters'
                                     {...register("password")}
                                 />
-                                <div className='text-xs md:text-sm text-[#FF3939] font-light'>
+                                <div className='hidden md:flex text-xs md:text-sm text-[#FF3939] font-light'>
                                     {errors.password ? (errors.password.type === 'min' ? errors.password.message : '') : ''}
                                 </div>
                             </span>
+                            <div className='flex md:hidden text-xs md:text-sm text-[#FF3939] font-light'>
+                                {errors.password ? (errors.password.type === 'min' ? errors.password.message : '') : ''}
+                            </div>
                         </div>
 
                         {/* {
@@ -118,10 +124,13 @@ const SignUp = () => {
                                     placeholder='At least 8 characters'
                                     {...register("confirmPassword")}
                                 />
-                                <div className='text-xs md:text-sm text-[#FF3939] font-light'>
+                                <div className='hidden md:flex text-xs md:text-sm text-[#FF3939] font-light'>
                                     {errors.confirmPassword?.type === 'min' ? errors.confirmPassword.message : ''}
                                 </div>
                             </span>
+                            <div className='flex md:hidden text-xs md:text-sm text-[#FF3939] font-light'>
+                                {errors.confirmPassword?.type === 'min' ? errors.confirmPassword.message : ''}
+                            </div>
                         </div>
 
                         <div className='w-fit mt-3 text-xs text-gray-600'>

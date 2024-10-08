@@ -72,10 +72,13 @@ const Login = () => {
                                     placeholder='e.g. alex@email.com'
                                     {...register('email')}
                                 />
-                                <div className='text-sm text-[#FF3939] font-light'>
+                                <div className='hidden md:flex text-sm text-[#FF3939] font-light'>
                                     {errors.email ? errors.email.message : ''}
                                 </div>
                             </span>
+                            <div className='flex md:hidden text-sm text-[#FF3939] font-light'>
+                                {errors.email ? errors.email.message : ''}
+                            </div>
                         </div>
 
                         <div className='flex flex-col gap-[5px]'>
@@ -88,10 +91,13 @@ const Login = () => {
                                     placeholder='Enter your password'
                                     {...register('password')}
                                 />
-                                <div className='text-sm text-[#FF3939] font-light'>
+                                <div className='hidden md:flex text-sm text-[#FF3939] font-light'>
                                     {errors.password? errors.password.message : ''}
                                 </div>
                             </span>
+                            <div className='flex md:hidden text-sm text-[#FF3939] font-light'>
+                                {errors.password? errors.password.message : ''}
+                            </div>
                         </div>
 
                         <div>
