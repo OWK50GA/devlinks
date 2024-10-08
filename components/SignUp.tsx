@@ -103,7 +103,7 @@ const SignUp = () => {
                                 </div>
                             </span>
                             <div className='flex md:hidden text-xs md:text-sm text-[#FF3939] font-light'>
-                                {errors.password ? (errors.password.type === 'min' ? errors.password.message : '') : ''}
+                                {errors.password ? errors.password.message : ''}
                             </div>
                         </div>
 
@@ -141,7 +141,7 @@ const SignUp = () => {
                             {errors.confirmPassword?.type === 'custom'? errors.confirmPassword.message : ''}
                         </div>
 
-                        <div className='text-xs md:text-sm text-[#FF3939] font-light'>
+                        <div className='hidden md:flex text-xs md:text-sm text-[#FF3939] font-light'>
                             {errors.password?.type !== 'min' ? errors.password?.message : ''}
                         </div>
 
