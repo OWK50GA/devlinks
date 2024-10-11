@@ -68,7 +68,7 @@ const SignUp = () => {
 
     if (loading) {
         return (
-            <div className='flex flex-col justify-center items-center mt-[10%]'>
+            <div className='flex flex-col justify-center items-center mt-[25%]'>
                 <Loading />
             </div>
         )
