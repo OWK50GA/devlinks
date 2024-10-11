@@ -7,14 +7,15 @@ import Link from "next/link";
 type EditorButtonProps = {
     text: string,
     dark: boolean,
+    uniqueValue: string
 }
 
-const EditorButton = ({ text, dark }: EditorButtonProps) => {
+const EditorButton = ({ text, dark, uniqueValue }: EditorButtonProps) => {
 
     const context = useAuth();
-    const currentUser = context?.currentUser;
+    const userDataObj = context?.userDataObj;
 
-    if (!currentUser) {
+    if (userDataObj?.email !== uniqueValue) {
         return (
             <Link href={'/login'}>
                 <Button text="Login" dark={false}/>
