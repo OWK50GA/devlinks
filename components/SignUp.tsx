@@ -13,6 +13,7 @@ import { useForm } from 'react-hook-form';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Loading from './Loading';
 
 const signUpSchema = z.object({
     email: z.string().email('Invalid Email Address'),
@@ -57,6 +58,12 @@ const SignUp = () => {
             setError(`Error occured Signing Up: ${err.message}`)
             setLoading(false)
         })
+    }
+
+    if (loading) {
+        return (
+            <Loading />
+        )
     }
 
     return ( 
