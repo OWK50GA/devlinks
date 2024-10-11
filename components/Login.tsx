@@ -55,7 +55,9 @@ const Login = () => {
 
     if (loading) {
         return (
-            <Loading />
+            <div className='flex flex-col justify-center items-center'>
+                <Loading />
+            </div>
         )
     }
 
