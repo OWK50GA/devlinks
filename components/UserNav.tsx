@@ -17,7 +17,7 @@ const UserNav = () => {
 
     const context = useAuth();
     const userDataObj = context?.userDataObj;
-    const email = userDataObj?.email;
+    const username = userDataObj?.username;
 
     return ( 
         <div className="flex items-center justify-between w-full mx-auto bg-white mt-4 rounded-lg px-6 py-2">
@@ -42,7 +42,7 @@ const UserNav = () => {
                 </Link> */}
             </div>
             <div className="flex justify-center items-center">
-                <Link href={`/${email}`}>
+                <Link href={`/${username}`}>
                     <span className="hidden sm:block">
                         <Button dark={false} text="Preview" />
                     </span>

@@ -9,7 +9,7 @@ import { use } from "react";
 
 type PreviewPageProps = {
     params: {
-        email: string;
+        username: string;
     }
 }
 
@@ -22,10 +22,10 @@ export async function generateMetadata (
     { params }: PreviewPageProps,
     parent: ResolvingMetadata
 ): Promise<Metadata> {
-    const { email } = params
-    const uniqueValue = decodeURIComponent(email)
+    const { username } = params
+    const uniqueValue = username;
 
-    const q = query(collection(db, 'users'), where('email', '==', uniqueValue));
+    const q = query(collection(db, 'users'), where('username', '==', uniqueValue));
     const querySnapshot = await getDocs(q)
 
     if (querySnapshot.empty) {
@@ -37,24 +37,24 @@ export async function generateMetadata (
     const userData = querySnapshot?.docs?.[0]?.data();
 
     return {
-        title: `${userData?.firstname} ${userData?.lastname} - Devlinks`,
-        description: `Meet ${userData?.firstname} on Devlinks`,
+        title: `${userData?.username} - Devlinks`,
+        description: `Meet ${userData?.username} on Devlinks`,
         openGraph: {
-            title: `${userData?.firstname} ${userData?.lastname} - Devlinks`,
-            description: `Meet ${userData?.firstname} on Devlinks`,
+            title: `${userData?.username} - Devlinks`,
+            description: `Meet ${userData?.username} on Devlinks`,
             images: [
                 {
                     url: userData?.profilePicture || null,
                     width: 1200,
                     height: 630,
-                    alt: `Profile of ${userData?.firstname} ${userData?.lastname}`
+                    alt: `Profile of ${userData?.username}`
                 }
             ]   
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${userData?.firstname} ${userData?.lastname} - Devlinks`,
-            description: `Meet ${userData?.firstname} on Devlinks`,
+            title: `${userData?.username} - Devlinks`,
+            description: `Meet ${userData?.username} on Devlinks`,
             images: [userData?.profilePicture || null]
         },
     }
@@ -62,16 +62,16 @@ export async function generateMetadata (
 
 const PreviewPage = async ({params}: PreviewPageProps) => {
 
-    const { email } = params;
-    const uniqueValue = decodeURIComponent(email)
+    const { username } = params;
+    const uniqueValue = username || '';
 
-    const q = query(collection(db, 'users'), where('email', '==', uniqueValue));
+    const q = query(collection(db, 'users'), where('username', '==', uniqueValue));
     const querySnapshot = await getDocs(q)
 
     if (querySnapshot.empty) {
         return <p>User Not found</p>
     } else if (querySnapshot.size > 1) {
-        return <p>Email used for more than one account</p>
+        return <p>This username is used for more than one account</p>
     }
 
     const userData = querySnapshot?.docs?.[0]?.data();
@@ -102,6 +102,9 @@ const PreviewPage = async ({params}: PreviewPageProps) => {
 
                 <div className="self-center mt-3 md:mt-5 flex flex-col gap-1 md:gap-2">
                     <p className="text-center font-bold md:text-2xl text-xl">
+                        {userData?.username}
+                    </p>
+                    <p className="text-center font-semibold md:text-xl text-lg">
                         {userData?.firstname} {userData?.lastname}  
                     </p>
                     <p className="text-center font-light md:text-sm text-xs">

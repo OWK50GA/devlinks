@@ -101,7 +101,7 @@ const Login = () => {
                             <span className={`flex border items-center justify-start gap-4 h-10 rounded-lg p-4 focus-within:border-[#633cff] ${errors.password ? 'border-[#FF3939]': ''}`}>
                                 <BiSolidLock className='text-gray-600'/>
                                 <input 
-                                    type={'password'} 
+                                    type={passwordType} 
                                     className='outline-none' 
                                     placeholder='Enter your password'
                                     {...register('password')}

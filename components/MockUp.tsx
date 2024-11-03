@@ -34,6 +34,9 @@ const MockUp = () => {
 
                     <div className="self-center mt-4 flex flex-col gap-[0.35rem] bg-white w-full">
                         <p className="text-center font-bold text-2xl">
+                            {userData?.username} 
+                        </p>
+                        <p className="text-center font-semibold text-lg">
                             {userData?.firstname} {userData?.lastname}  
                         </p>
                         <p className="text-center font-light text-sm">
@@ -43,7 +46,7 @@ const MockUp = () => {
 
                     {
                         userData?.links? 
-                        <div className="flex flex-col gap-4 mt-11 max-h-[40vh] ml-[0.35rem] -mr-[0.35rem]">
+                        <div className="flex flex-col gap-4 mt-4 max-h-[40vh] ml-[0.35rem] -mr-[0.35rem]">
                             {
                                 userData?.links?.slice(0, 5).map((link: Link) => {
                                     const platformConfigArray = Object.values(platformConfig)
